@@ -6,7 +6,7 @@ import { InputStatesStore } from 'stores/inputs';
 
 import { LinkToNode, Spinner } from 'components/common';
 
-import InputStateComparator from 'components/inputs/InputStateComparator';
+import InputStateComparator from 'logic/inputs/InputStateComparator';
 
 const InputStateBadge = React.createClass({
   propTypes: {
