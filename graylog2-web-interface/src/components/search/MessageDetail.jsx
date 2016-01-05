@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {ButtonGroup, Button, Row, Col, DropdownButton, MenuItem} from 'react-bootstrap';
+import {Input, ButtonGroup, Button, Row, Col, DropdownButton, MenuItem} from 'react-bootstrap';
 import Immutable from 'immutable';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -158,6 +158,8 @@ const MessageDetail = React.createClass({
         { (! streamList && this.props.allStreamsLoaded) && <MenuItem header>No streams available</MenuItem> }
       </DropdownButton>);
 
+    const innerButton = <Button>Show messages +/-</Button>;
+
     return (<div>
 
       <Row className="row-sm">
@@ -167,6 +169,7 @@ const MessageDetail = React.createClass({
 
             <ClipboardButton title="Copy ID" text={this.props.message.id}/>
             {testAgainstStream}
+            <Input type="text" value="3" buttonBefore={innerButton} addonAfter="seconds" bsSize="small" size=""/>
           </ButtonGroup>
           <h3>
             <i className="fa fa-envelope"/>
